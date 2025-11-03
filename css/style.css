@@ -16,3 +16,194 @@
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+/* ========== GLOBAL RESET & BASE ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #f4f6f7;
+  color: #2b2b2b;
+  line-height: 1.6;
+  padding-bottom: 3rem;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: #1f3b2d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header details summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: #355b45;
+}
+
+header details[open] summary {
+  background-color: #497c5c;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  background: #355b45;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+}
+
+header nav a:hover {
+  background-color: #497c5c;
+}
+
+header img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+section h3 {
+  color: #1f3b2d;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #355b45;
+  padding-bottom: 0.2rem;
+}
+
+section input,
+section textarea,
+section select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 0.95rem;
+}
+
+section input:focus,
+section textarea:focus {
+  border-color: #497c5c;
+  outline: none;
+  background-color: #f9fff8;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Fieldset styling for clear visual grouping */
+fieldset {
+  border: 1.5px solid #b0bfb3;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+legend {
+  padding: 0 0.5rem;
+  color: #1f3b2d;
+  font-weight: bold;
+}
+
+/* Form layout */
+form section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+form label {
+  flex-basis: 100%;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #1f3b2d;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+footer section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+footer .icons i {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+footer .icons i:hover {
+  color: #9fd0a0;
+}
+
+footer img {
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  form section {
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
