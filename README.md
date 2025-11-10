@@ -1,2 +1,3 @@
-# SandBagCalculator
-Transfer sandbag calculator from c to javascript + html + css
+# First Responder Site
+
+Website where first responders can log their incidents
