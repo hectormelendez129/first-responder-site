@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>First Responder Incident Management</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3><span class="fa fa-user"></span> Local</h3>
+          <!-- Displays id, first, last, email and pw in dom -->
+          <% if (user.local.email) { %>
+            <p>
+              <strong>id</strong>: <%= user._id %><br>
+                <strong>firstName</strong>: <%= user.local.firstName %><br>
+                  <strong>lastName</strong>: <%= user.local.lastName %><br>
+                    <strong>email</strong>: <%= user.local.email %><br>
+                      <strong>password</strong>: <%= user.local.password %>
+            </p>
+
+            <a href="/unlink/local" class="btn btn-default">Unlink</a>
+            <% } else { %>
+              <a href="/connect/local" class="btn btn-default">Connect Local</a>
+              <% } %>
+
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h2>Add an Incident</h2>
+        <% if (user.local.email) { %>
+          <!-- <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="species" name="species">
+            <input type="number" step="0.01" placeholder="lat" name="lat">
+            <input type="number" step="0.01" placeholder="long" name="long">
+            <input type="text" placeholder="message" name="notes"> -->
+
+            <fieldset>
+              <legend>
+                <h3>Start</h3>
+              </legend>
+              <form action="/messages" method="POST">
+                <section>
+                  <input type="text" value="<%= user.local.email %>" name="username" hidden>
+                  <label for="time">Call Recieved</label>
+                  <input type="time" placeholder="Start time" name="startTime">
+                  <input type="date" name="dateCallRecieved">
+                </section>
+                <section>
+                  <label for="Unit / LEO Info">Contact Info</label>
+                  <input type="text" name="rank" placeholder="Rank">
+                  <input type="text" name="leoFirstName" placeholder="First Name">
+                  <input type="text" name="leoLastName" placeholder="Last Name">
+                  <input type="tel" name="leoCell" placeholder="Cell">
+                </section>
+                <section>
+                  <label for="itemDescription">Item Description</label>
+                  <textarea name="itemDescription" placeholder="1ea 105mm M1, Projectile, 60-D-2-00-00"></textarea>
+                </section>
+                <section>
+                  <label for="explosives">Explosives Drawn</label>
+                  <textarea name="explosives" placeholder="Ex. 2ea MN88  LOT: ABC-123"></textarea>
+                </section>
+
+                <section>
+                  <label for="departTime">Depart Time</label>
+                  <input type="time" name="departTime">
+                  <label for="departDate">Depart Date</label>
+                  <input type="date" name="departDate">
+                  <input type="number" name="truckDepartMiles" placeholder="Start Miles">
+                </section>
+                <button type="submit">Submit</button>
+              </form>
+            </fieldset>
+
+<!-- 
+            <button type="submit">Submit</button>
+          </form> -->
+
+          <h3>List of Incident</h3>
+          <ul class="messages">
+            <% for(var i=0; i<messages.length; i++) {%>
+              <li class="message">
+                <span>
+                  <%= messages[i].name %>
+                </span>
+                <span>
+                  <%= messages[i].species %>
+                </span>
+                <span>
+                  <%= messages[i].lat %>
+                </span>
+                <span>
+                  <%= messages[i].long %>
+                </span>
+                <span>
+                  <%= messages[i].notes %>
+                </span>
+                <span>
+                  <%= messages[i].thumbUp %>
+                </span>
+                <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </li>
+              <% } %>
+          </ul>
+          <div>
+            <!-- leaflet map *future updates will include google maps api* -->
+            <h3>Incident Map</h3>
+            <div id="map" style="height:400px; width:100%;"></div>
+          </div>
+
+      </div>
+      <% } %>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script src="/map.js"></script>
+
+</body>
+
+</html>
