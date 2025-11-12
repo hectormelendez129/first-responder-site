@@ -2,7 +2,7 @@
 
 A full-stack Node.js and Express web application that enables first responders to document, track, and manage incident response data efficiently. Users can log key details of each incident phase, visualize incidents on an interactive map, and store all entries securely using MongoDB.
 
-## [Live Demo]()
+## [Live Demo](https://first-responder-site.onrender.com)
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -78,7 +78,8 @@ http://localhost:8080
 4. Visualize response distribution geographically for situational awareness and reporting.
 
 ## Screenshots
-[Live Demo]()
+[Live Demo](https://first-responder-site.onrender.com)
+<img width="1075" height="672" alt="Screenshot 2025-11-12 102723" src="https://github.com/user-attachments/assets/ee506fb3-1bfd-45d6-90fb-b185aebc8232" />
 
 ## Acknowledgements
 * [Node.js Documentation](https://nodejs.org/en/docs/)
