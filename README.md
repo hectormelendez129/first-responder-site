@@ -79,7 +79,8 @@ http://localhost:8080
 
 ## Screenshots
 [Live Demo](https://first-responder-site.onrender.com)
-<img width="1075" height="672" alt="Screenshot 2025-11-12 102723" src="https://github.com/user-attachments/assets/ee506fb3-1bfd-45d6-90fb-b185aebc8232" />
+
+<img width="400" height="400" alt="Screenshot 2025-11-12 102723" src="https://github.com/user-attachments/assets/ee506fb3-1bfd-45d6-90fb-b185aebc8232" />
 
 ## Acknowledgements
 * [Node.js Documentation](https://nodejs.org/en/docs/)
